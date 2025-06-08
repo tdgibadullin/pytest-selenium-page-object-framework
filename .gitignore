@@ -1,0 +1,30 @@
+# Python: caches, bytecode, and junk
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# pytest
+.pytest_cache/
+.coverage
+.cache
+*.cover
+*.py,cover
+nosetests.xml
+coverage.xml
+
+# IDE: PyCharm
+.idea/
+
+# macOS: system files
+.DS_Store
+
+# Logs and temporary files
+*.log
