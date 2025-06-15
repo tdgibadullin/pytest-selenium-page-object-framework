@@ -1,0 +1,57 @@
+from .base_page import BasePage
+from .locators import ProductPageLocators
+
+
+class ProductPage(BasePage):
+    def add_product_to_basket(self):
+        add_button = self.browser.find_element(
+            *ProductPageLocators.ADD_TO_BASKET_BUTTON
+        )
+        add_button.click()
+
+    def get_product_name(self):
+        return self.browser.find_element(
+            *ProductPageLocators.PRODUCT_NAME
+        ).text
+
+    def get_product_price(self):
+        return self.browser.find_element(
+            *ProductPageLocators.PRODUCT_PRICE
+        ).text
+
+    def get_product_name_in_message(self):
+        return self.browser.find_element(
+            *ProductPageLocators.PRODUCT_NAME_IN_MESSAGE
+        ).text
+
+    def get_basket_total(self):
+        return self.browser.find_element(
+            *ProductPageLocators.BASKET_TOTAL
+        ).text
+
+    def should_be_add_to_basket_message(self):
+        assert self.is_element_present(
+            *ProductPageLocators.ADD_TO_BASKET_MESSAGE
+        ), "Add to basket message is not present"
+
+    def should_be_basket_total_message(self):
+        assert self.is_element_present(
+            *ProductPageLocators.BASKET_TOTAL_MESSAGE
+        ), "Basket total message is not present"
+
+    def should_be_correct_product_name_in_add_to_basket_message(
+            self,
+            product_name
+    ):
+        product_name_in_message = self.get_product_name_in_message()
+        assert product_name == product_name_in_message, (
+            f"Expected product name '{product_name}' in add to basket message, "
+            f"but got '{product_name_in_message}'"
+        )
+
+    def should_be_correct_price_in_basket_total_message(self, product_price):
+        basket_total = self.get_basket_total()
+        assert product_price == basket_total, (
+            f"Expected basket total '{product_price}', "
+            f"but got '{basket_total}'"
+        )
