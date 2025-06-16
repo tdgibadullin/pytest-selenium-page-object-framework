@@ -29,23 +29,23 @@ class ProductPage(BasePage):
             *ProductPageLocators.BASKET_TOTAL
         ).text
 
-    def should_be_add_to_basket_message(self):
+    def should_be_success_message(self):
         assert self.is_element_present(
-            *ProductPageLocators.ADD_TO_BASKET_MESSAGE
-        ), "Add to basket message is not present"
+            *ProductPageLocators.SUCCESS_MESSAGE
+        ), "Success message is not present"
 
     def should_be_basket_total_message(self):
         assert self.is_element_present(
             *ProductPageLocators.BASKET_TOTAL_MESSAGE
         ), "Basket total message is not present"
 
-    def should_be_correct_product_name_in_add_to_basket_message(
+    def should_be_correct_product_name_in_success_message(
             self,
             product_name
     ):
         product_name_in_message = self.get_product_name_in_message()
         assert product_name == product_name_in_message, (
-            f"Expected product name '{product_name}' in add to basket message, "
+            f"Expected product name '{product_name}' in success message, "
             f"but got '{product_name_in_message}'"
         )
 
@@ -55,3 +55,13 @@ class ProductPage(BasePage):
             f"Expected basket total '{product_price}', "
             f"but got '{basket_total}'"
         )
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(
+            *ProductPageLocators.SUCCESS_MESSAGE
+        ), "Success message is present but should not be"
+
+    def should_disappear_success_message(self):
+        assert self.is_element_disappeared(
+            *ProductPageLocators.SUCCESS_MESSAGE
+        ), "Success message did not disappear but should have"
