@@ -54,6 +54,15 @@ class BasePage:
     def open(self):
         self.browser.get(self.url)
 
+    def should_be_authorized_user(self, timeout=10):
+        try:
+            WebDriverWait(self.browser, timeout).until(
+                EC.presence_of_element_located(BasePageLocators.USER_ICON)
+            )
+        except TimeoutException:
+            assert False, ("User icon is not presented, "
+                           "probably unauthorized user")
+
     def should_be_login_link(self):
         assert self.is_element_present(
             *BasePageLocators.LOGIN_LINK
