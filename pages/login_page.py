@@ -6,14 +6,17 @@ class LoginPage(BasePage):
     def register_new_user(self, email, password):
         email_input = self.browser.find_element(*LoginPageLocators.EMAIL_INPUT)
         email_input.send_keys(email)
+
         password_input_1 = self.browser.find_element(
             *LoginPageLocators.PASSWORD_INPUT_1
         )
         password_input_1.send_keys(password)
+
         password_input_2 = self.browser.find_element(
             *LoginPageLocators.PASSWORD_INPUT_2
         )
         password_input_2.send_keys(password)
+
         register_button = self.browser.find_element(
             *LoginPageLocators.REGISTER_BUTTON
         )
@@ -26,7 +29,7 @@ class LoginPage(BasePage):
 
     def should_be_login_url(self):
         assert "login" in self.browser.current_url, (
-            '"login" substring is not present in the current URL'
+            "'login' substring is not present in the current URL"
         )
 
     def should_be_login_form(self):
