@@ -46,21 +46,22 @@ The tests encompass:
 pytest-selenium-page-object-framework/
 ├── .gitignore                    # Files and directories ignored by Git
 ├── __init__.py                   # Marks the directory as a Python package
-├── configuration.py              # All framework URLs
+├── configuration.py              # All the framework URLs
 ├── conftest.py                   # pytest fixtures and hooks (browser setup)
+├── LICENSE                       # License under which the framework is distributed
 ├── pytest.ini                    # pytest configuration (custom markers)
+├── README.md                     # Framework description and usage instructions
 ├── requirements.txt              # Framework dependencies
 ├── test_main_page.py             # Tests for the web store’s main page
 ├── test_product_page.py          # Tests for the product page
-├── pages/                        # Package with Page Object classes and locators
-│   ├── __init__.py               # Marks the directory as a Python package
-│   ├── base_page.py              # BasePage class with shared methods
-│   ├── basket_page.py            # Page Object class for the basket page
-│   ├── locators.py               # All page locators
-│   ├── login_and_sign_up_page.py # Page Object class for the login and sign-up page
-│   ├── main_page.py              # Page Object class for the web store's main page
-│   └── product_page.py           # Page Object class for the product page
-├── README.md                     # Framework description and usage instructions
+└── pages/                        # Package with the Page Object classes and locators
+    ├── __init__.py               # Marks the directory as a Python package
+    ├── base_page.py              # BasePage class with shared methods
+    ├── basket_page.py            # Page Object class for the basket page
+    ├── locators.py               # All the page locators
+    ├── login_and_sign_up_page.py # Page Object class for the login and sign-up page
+    ├── main_page.py              # Page Object class for the web store's main page
+    └── product_page.py           # Page Object class for the product page
 ```
 
 ---
@@ -191,19 +192,20 @@ pytest-selenium-page-object-framework/
 ├── __init__.py                   # Обозначает директорию как Python-пакет
 ├── configuration.py              # Все URL фреймворка
 ├── conftest.py                   # Фикстуры и хуки pytest (настройка браузера)
+├── LICENSE                       # Лицензия, по которой распространяется фреймворк
 ├── pytest.ini                    # Конфигурация pytest (пользовательские маркеры)
+├── README.md                     # Описание фреймворка и инструкции по запуску
 ├── requirements.txt              # Зависимости фреймворка
 ├── test_main_page.py             # Тесты для главной страницы магазина
 ├── test_product_page.py          # Тесты для страницы товара
-├── pages/                        # Пакет с Page Object-классами и их локаторами
-│   ├── __init__.py               # Обозначает директорию как Python-пакет
-│   ├── base_page.py              # Базовый класс BasePage с общими методами
-│   ├── basket_page.py            # Page Object-класс для страницы корзины
-│   ├── locators.py               # Все локаторы страниц
-│   ├── login_and_sign_up_page.py # Page Object-класс для страницы логина и регистрации
-│   ├── main_page.py              # Page Object-класс для главной страницы магазина
-│   └── product_page.py           # Page Object-класс для страницы товара
-├── README.md                     # Описание фреймворка и инструкции по запуску
+└── pages/                        # Пакет с Page Object-классами и их локаторами
+    ├── __init__.py               # Обозначает директорию как Python-пакет
+    ├── base_page.py              # Базовый класс BasePage с общими методами
+    ├── basket_page.py            # Page Object-класс для страницы корзины
+    ├── locators.py               # Все локаторы страниц
+    ├── login_and_sign_up_page.py # Page Object-класс для страницы логина и регистрации
+    ├── main_page.py              # Page Object-класс для главной страницы магазина
+    └── product_page.py           # Page Object-класс для страницы товара
 ```
 
 ---
