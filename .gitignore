@@ -1,30 +1,36 @@
-# Python: caches, bytecode, and junk
+# Python bytecode and caches
 __pycache__/
 *.py[cod]
 *$py.class
 
 # Virtual environments
+.venv/
 venv/
-.env/
 env/
-ENV/
-env.bak/
-venv.bak/
 
-# pytest
-.pytest_cache/
-.coverage
-.cache
-*.cover
-*.py,cover
-nosetests.xml
-coverage.xml
+# Environment variables
+.env
+.env.*
 
-# IDE: PyCharm
+# IDE and editor settings
 .idea/
+.vscode/
+*.swp
+*.swo
 
-# macOS: system files
-.DS_Store
+# Test artifacts
+.pytest_cache/
+.cache/
+.coverage
+coverage.xml
+htmlcov/
 
-# Logs and temporary files
+# Log files
 *.log
+log/
+logs/
+
+# OS-specific files
+.DS_Store
+._*
+Thumbs.db
