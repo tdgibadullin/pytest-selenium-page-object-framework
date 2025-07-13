@@ -88,48 +88,61 @@ cd pytest-selenium-page-object-framework
 
 ### 2. Install dependencies
 
-Using a virtual environment is recommended.
+Create a virtual environment:
+
+```bash 
+python -m venv venv # If the "python" command is not found, try "python3"
+```
+
+Activate the virtual environment:
+
+```bash 
+# For macOS/Linux
+source venv/bin/activate
+
+# For Windows (CMD)
+venv\Scripts\activate.bat
+
+# For Windows (PowerShell)
+venv\Scripts\Activate.ps1
+```
+
+Install dependencies:
 
 ```bash
-# Create and activate a virtual environment.
-python -m venv venv
-source venv/bin/activate  # For Windows (CMD): venv\Scripts\activate
-
-# Install required packages.
 pip install -r requirements.txt
 ```
 
-*Note: Selenium WebDriver 4+ automatically handles the download and management of browser drivers (e.g., ChromeDriver) via its built-in Selenium Manager, so no manual driver setup is required in most cases.*
-
 ### 3. Run the tests
 
-To run all tests, execute the following command in your terminal:
+To run all tests:
 
 ```bash
 pytest
 ```
 
-To run tests in a specific language (e.g., French), execute:
+To run tests in a specific language (e.g., French):
 
 ```bash
 pytest --language=fr
 ```
 
-To run only tests marked with a specific marker (e.g., `basket_user`), execute:
+To run only tests marked with a specific marker (e.g., `basket_user`):
 
 ```bash
 pytest -m basket_user
 ```
 
-### Troubleshooting: Manual ChromeDriver Setup (if needed)
+### Troubleshooting: Manual ChromeDriver Installation (If Needed)
 
-In most cases, Selenium WebDriver 4+ automatically downloads the required version of ChromeDriver.
+In most cases, Selenium WebDriver 4+ automatically downloads the appropriate version of ChromeDriver.
 
-However, if you encounter issues or are using an older version of Selenium WebDriver, manual installation of the driver may be required:
-- Check your Google Chrome version (Three dots menu → Help → About Google Chrome).
-- Download the corresponding version of ChromeDriver from the [official website](https://googlechromelabs.github.io/chrome-for-testing/).
-- Unzip the archive and place the driver executable in a directory in your `PATH` (e.g., `/usr/local/bin` on Linux/macOS, or a folder in `PATH` on Windows).
-- Make sure the correct version is installed by executing the following command in your terminal:
+If you encounter issues or are using an older version of Selenium WebDriver, manual installation of the driver may be required:
+- Check your Google Chrome version (Three-dot menu → Help → About Google Chrome).
+- Download the matching version of ChromeDriver from the [official website](https://googlechromelabs.github.io/chrome-for-testing/).
+- Extract the archive and move the driver executable to a directory listed in the `PATH` environment variable.
+- Verify that the correct version of ChromeDriver is installed:
+
 ```bash
 chromedriver --version
 ```
@@ -140,7 +153,7 @@ chromedriver --version
 
 This project is based on the materials from the course ["Test Automation with Selenium and Python"](https://stepik.org/course/575) (authors — Aleksey Pogibelev, Yulia Lyakh, and the Stepik Team), which is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
-The present project is distributed under the compatible [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) with proper attribution. The full text of the license is available in the `LICENSE` file in the project's root directory.
+The present project is distributed under the compatible [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). The full text of the license is available in the `LICENSE` file in the project's root directory.
 
 This project contains the original work of its author, as well as adapted and some unchanged materials from the aforementioned course.
 
@@ -188,7 +201,7 @@ This project contains the original work of its author, as well as adapted and so
 
 ```text
 pytest-selenium-page-object-framework/
-├── .gitignore                    # Файлы и папки, игнорируемые Git
+├── .gitignore                    # Файлы и директории, игнорируемые Git
 ├── __init__.py                   # Обозначает директорию как Python-пакет
 ├── configuration.py              # Все URL фреймворка
 ├── conftest.py                   # Фикстуры и хуки pytest (настройка браузера)
@@ -232,34 +245,46 @@ cd pytest-selenium-page-object-framework
 
 ### 2. Установка зависимостей
 
-Рекомендуется использовать виртуальное окружение.
+Создайте виртуальное окружение:
+
+```bash 
+python -m venv venv # Если команда "python" не найдена, попробуйте "python3"
+```
+
+Активируйте виртуальное окружение:
+
+```bash 
+# Для macOS/Linux
+source venv/bin/activate
+
+# Для Windows (CMD)
+venv\Scripts\activate.bat
+
+# Для Windows (PowerShell)
+venv\Scripts\Activate.ps1
+```
+
+Установите зависимости:
 
 ```bash
-# Создание и активация виртуального окружения.
-python -m venv venv
-source venv/bin/activate  # Для Windows (CMD): venv\Scripts\activate
-
-# Установка необходимых пакетов.
 pip install -r requirements.txt
 ```
 
-*Примечание: Selenium WebDriver 4+ автоматически управляет загрузкой и использованием драйверов браузеров (например, ChromeDriver) с помощью встроенного Selenium Manager, поэтому ручная установка драйвера в большинстве случаев не требуется.*
-
 ### 3. Запуск тестов
 
-Чтобы запустить все тесты, выполните в терминале следующую команду:
+Запуск всех тестов:
 
 ```bash
 pytest
 ```
 
-Чтобы запустить тесты с определённым языком интерфейса (например, французским), выполните:
+Запуск тестов с определённым языком интерфейса (например, французским):
 
 ```bash
 pytest --language=fr
 ```
 
-Чтобы запустить только тесты с определённым маркером (например, `basket_user`), выполните:
+Запуск тестов с определённым маркером (например, `basket_user`):
 
 ```bash
 pytest -m basket_user
@@ -267,13 +292,14 @@ pytest -m basket_user
 
 ### Устранение неполадок: ручная установка ChromeDriver (при необходимости)
 
-В большинстве случаев Selenium WebDriver 4+ автоматически загружает нужную версию ChromeDriver.
+В большинстве случаев Selenium WebDriver 4+ автоматически загружает подходящую версию ChromeDriver.
 
 Если вы столкнулись с проблемами или используете более старую версию Selenium WebDriver, может потребоваться ручная установка драйвера:
-- Узнайте вашу версию Google Chrome (Настройка и управление Google Chrome (иконка с тремя точками) → Справка → О браузере Google Chrome).
+- Определите вашу версию Google Chrome (Настройка и управление Google Chrome (иконка с тремя точками) → Справка → О браузере Google Chrome).
 - Скачайте соответствующую версию ChromeDriver с [официального сайта](https://googlechromelabs.github.io/chrome-for-testing/).
-- Распакуйте архив и поместите исполняемый файл драйвера в директорию, доступную из `PATH` (например, `/usr/local/bin` на Linux/macOS, или в папку, добавленную в `PATH`, на Windows).
-- Убедитесь, что нужная версия ChromeDriver установлена, выполнив следующую команду в терминале:
+- Распакуйте архив и поместите исполняемый файл драйвера в директорию, указанную в переменной окружения `PATH`.
+- Убедитесь, что нужная версия ChromeDriver установлена:
+
 ```bash
 chromedriver --version
 ```
@@ -284,7 +310,7 @@ chromedriver --version
 
 Данный проект разработан на основе материалов курса ["Автоматизация тестирования с помощью Selenium и Python"](https://stepik.org/course/575) (авторы — Алексей Погибелев, Юлия Лях и команда Stepik), распространяющегося по лицензии [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
-Настоящий проект распространяется по совместимой лицензии [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) с надлежащим указанием авторства. Полный текст лицензии доступен в файле `LICENSE` в корневом каталоге проекта.
+Настоящий проект распространяется по совместимой лицензии [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). Полный текст лицензии доступен в файле `LICENSE` в корневом каталоге проекта.
 
 Данный проект содержит оригинальные наработки его автора, а также переработанные и отдельные неизменённые материалы указанного курса.
 
