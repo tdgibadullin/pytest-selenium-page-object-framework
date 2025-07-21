@@ -32,18 +32,14 @@ def browser(request):
     """
     user_language = request.config.getoption("language")
 
-    # Configure Chrome options to set the language.
     options = Options()
     options.add_experimental_option(
         'prefs',
         {'intl.accept_languages': user_language}
     )
 
-    # Initialize the Chrome WebDriver with the specified options.
     browser = webdriver.Chrome(options=options)
 
-    # Yield the browser instance to the test method.
     yield browser
 
-    # Teardown: quit the browser after the test has finished.
     browser.quit()

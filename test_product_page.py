@@ -143,15 +143,15 @@ class TestGuestAddToBasketFromProductPage:
             product_price
         )
 
-    @pytest.mark.xfail
+    @pytest.mark.xfail(
+        reason="Fails by design, showcases is_not_element_present method"
+    )
     def test_guest_cant_see_product_added_message_after_adding_it_to_basket(
             self,
             browser
     ):
         """
         Check that there is no 'Product added' message after adding.
-
-        Expected to fail because this message should appear.
 
         Steps:
         1. Open the product page.
@@ -165,15 +165,15 @@ class TestGuestAddToBasketFromProductPage:
 
         product_page.should_not_be_product_added_message()
 
-    @pytest.mark.xfail
+    @pytest.mark.xfail(
+        reason="Fails by design, showcases is_disappeared method"
+    )
     def test_product_added_message_disappears_after_adding_product_to_basket(
             self,
             browser
     ):
         """
         Check that the 'Product added' message disappears after adding.
-
-        Expected to fail because this message should not disappear.
 
         Steps:
         1. Open the product page.

@@ -1,41 +1,41 @@
-# Web Store Test Automation Framework (pytest & Selenium WebDriver)
+# Web Store End-to-End Test Automation Framework (pytest & Selenium WebDriver)
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
 ![pytest](https://img.shields.io/badge/pytest-grey?logo=pytest)
 ![Selenium WebDriver](https://img.shields.io/badge/Selenium%20WebDriver-gray?logo=selenium&logoColor=43B02A)
 
-[English Language](#english) | [Русский язык](#russian)
+[English language](#english) | [Русский язык](#russian)
 
 ---
 <a id="english"></a>
 ## Description
 
-This project is a test automation framework for a demo web store, built using **pytest** and **Selenium WebDriver**. Initially developed as part of a test automation course, it has been significantly extended and refined beyond the course requirements to showcase advanced automation practices.
+This project is an end-to-end test automation framework for a demo web store, built using **pytest** and **Selenium WebDriver**.
+
+Initially developed as part of completing a test automation course, it has been significantly extended and refined beyond the course requirements to showcase advanced automation practices.
 
 The framework's architecture is based on the **Page Object Model** pattern, which ensures modularity, readability, and ease of maintenance.
 
-The tests cover various user scenarios for both guests and registered users.
-
-The tests encompass:
-- the visibility of the login and sign-up page link;
+The tests cover various scenarios for both guests and registered users. The checks include:
+- visibility of the login and sign-up page link;
 - navigation to the login and sign-up page; 
 - adding a product to the basket; 
 - success messages and basket content; 
-- the behavior of an empty basket.
+- behavior of an empty basket.
 
 ### Key Features
 
 - **Test implementation based on Page Object Model:**
-  - all web page–specific actions are encapsulated in Page Object classes, **separating test logic from UI interaction code**; 
-  - tests focus on **high-level steps**, while checks are performed within Page Object methods, making the tests easy to read; 
-  - all locators are defined in a separate `locators.py` module.
-- **Centralized configuration:** all framework URLs are stored in a single `configuration.py` module.
+  - all the web page–specific actions are encapsulated in the Page Object classes, **separating test logic from UI interaction code**; 
+  - the tests focus on **high-level steps**, while the lower-level checks are performed within the Page Object methods, making the tests easy to read; 
+  - all the locators are defined in a separate `locators.py` module.
+- **Centralized configuration:** all the framework URLs are stored in a single `configuration.py` module.
 - **Flexible browser configuration:** the `conftest.py` module includes a `browser` fixture that supports running tests in **different interface languages** via the `--language` command-line option.
 - **Test data generation:** the `setup` fixture dynamically registers a new user before each test in the corresponding class, ensuring **test independence**.
 - **Reliable waits:** the project uses **explicit waits** (`WebDriverWait`) to handle dynamic content loading and avoid flaky tests.
-- **pytest integration:** the framework leverages powerful pytest features such as **parameterization**, **markers**, and **expected failures** (`xfail`).
-- **Coverage of scenarios:** the project includes both **positive** and **negative** test cases for thorough functionality testing.
-- **Comprehensive documentation:** all modules, functions, classes, and methods include **informative docstrings** and, where necessary, comments.
+- **Advanced pytest integration:** the framework leverages powerful pytest features such as **parameterization**, **expected failures** (`xfail`), and **custom markers**.
+- **Coverage of scenarios:** the project includes both **positive** and **negative** test cases for a thorough functionality testing.
+- **Comprehensive documentation:** all the modules, functions, classes, and methods include **informative docstrings** and, where necessary, comments.
 - **Clean framework structure:** a well-organized repository with intuitive navigation.
 
 ---
@@ -151,7 +151,7 @@ chromedriver --version
 
 ## License
 
-This project is based on the materials from the course ["Test Automation with Selenium and Python"](https://stepik.org/course/575) (authors — Aleksey Pogibelev, Yulia Lyakh, and the Stepik Team), which is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+This project is based on the materials from the course ["Test Automation using Selenium and Python"](https://stepik.org/course/575) (authors — Aleksey Pogibelev, Yulia Lyakh, and the Stepik Team), which is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 The present project is distributed under the compatible [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). The full text of the license is available in the `LICENSE` file in the project's root directory.
 
@@ -161,19 +161,19 @@ This project contains the original work of its author, as well as adapted and so
 
 ## Author
 
-© 2025 [Timur Gibadullin](https://github.com/tdgibadullin) ([tdgibadullin@gmail.com](mailto:tdgibadullin@gmail.com))
+© [Timur Gibadullin](https://github.com/tdgibadullin) ([tdgibadullin@gmail.com](mailto:tdgibadullin@gmail.com)), 2025
 
 ---
 <a id="russian"></a>
 ## Описание
 
-Этот проект представляет собой фреймворк для автоматизации тестирования демонстрационного интернет-магазина, созданный с использованием **pytest** и **Selenium WebDriver**. Первоначально проект был разработан в рамках курса по автоматизации тестирования, но впоследствии был значительно расширен и усовершенствован сверх требований курса, чтобы продемонстрировать продвинутые практики автоматизации.
+Этот проект представляет собой фреймворк для автоматизации end-to-end тестирования демонстрационного интернет-магазина, созданный с использованием **pytest** и **Selenium WebDriver**.
+
+Первоначально проект был разработан в рамках прохождения курса по автоматизации тестирования, но впоследствии был значительно расширен и усовершенствован сверх требований курса, чтобы продемонстрировать продвинутые практики автоматизации.
 
 Архитектура фреймворка основана на паттерне **Page Object Model**, что обеспечивает его модульность, читаемость и простоту в поддержке.
 
-Тесты охватывают различные пользовательские сценарии как для гостей, так и для зарегистрированных пользователей.
-
-Предусмотрены проверки в том числе:
+Тесты охватывают различные сценарии как для гостей, так и для зарегистрированных пользователей. Предусмотрены проверки в том числе:
 - видимости ссылки на страницу логина и регистрации;
 - переходов на страницу логина и регистрации;
 - добавления товара в корзину;
@@ -184,13 +184,13 @@ This project contains the original work of its author, as well as adapted and so
 
 - **Реализация тестов по паттерну Page Object Model**:
   - все действия, специфичные для веб-страниц, инкапсулированы в Page Object-классах, что **отделяет логику тестов от кода взаимодействия с UI**;
-  - тесты фокусируются на **высокоуровневых шагах**, а проверки выполняются внутри методов Page Object, что делает тесты легко читаемыми;
+  - тесты фокусируются на **высокоуровневых шагах**, а проверки более низкого уровня выполняются внутри методов Page Object, что делает тесты легко читаемыми;
   - все локаторы вынесены в отдельный модуль `locators.py`.
 - **Централизованная конфигурация:** URL фреймворка содержатся в едином модуле `configuration.py`.
 - **Гибкая настройка браузера:** модуль `conftest.py` включает фикстуру `browser`, которая поддерживает запуск тестов с **разными языками интерфейса** через параметр командной строки `--language`.
 - **Генерация тестовых данных:** фикстура `setup` динамически регистрирует нового пользователя перед каждым тестом в соответствующем классе, обеспечивая **независимость тестов**.
 - **Надёжные ожидания:** фреймворк использует **явные ожидания** (`WebDriverWait`) для обработки динамической загрузки страниц и предотвращения нестабильных ("flaky") тестов.
-- **Интеграция с pytest:** применяются мощные возможности pytest, такие как **параметризация**, **маркеры** и **ожидаемые падения** (`xfail`).
+- **Расширенная интеграция с pytest:** применяются мощные возможности pytest, такие как **параметризация**, **ожидаемые падения** (`xfail`) и **пользовательские маркеры**.
 - **Покрытие сценариев:** включены как **позитивные**, так и **негативные** тест-кейсы для всесторонней проверки функциональности.
 - **Качественная документация:** все модули, функции, классы и методы содержат **информативные англоязычные докстринги**, а также, при необходимости, комментарии.
 - **Чистая структура фреймворка:** хорошо организованный репозиторий с понятной навигацией.
@@ -318,4 +318,4 @@ chromedriver --version
 
 ## Автор
 
-© 2025 [Тимур Гибадуллин](https://github.com/tdgibadullin) ([tdgibadullin@gmail.com](mailto:tdgibadullin@gmail.com))
+© [Тимур Гибадуллин](https://github.com/tdgibadullin) ([tdgibadullin@gmail.com](mailto:tdgibadullin@gmail.com)), 2025
